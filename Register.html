@@ -1,0 +1,65 @@
+	<!DOCTYPE html>
+<html>
+<head>
+<title>SeeOtherPeople!.Register</title>
+
+<link rel="stylesheet" type="text/css" media="screen and (min-device-width: 501px)" href="StyleRegister.css" />
+</head>
+<body> 
+
+
+
+
+<!--form de inregistrare, validat prin fisier javascript conform regex. Submitul trimite datele catre pagina principala home.html-->
+<form id ="regfrm" action="home.html" method = "post" onsubmit=" return checkRegex()">
+
+  <div class="cred">
+    <h1>Sign Up</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+    <label for="username"><b>Username</b></label>
+    <input type="text" id = "user" placeholder="Enter Username" name="username"  required >
+	<!--emailul e tot text pentru ca oricum voi verifica conditiile de email-->
+	<label for="email"><b>Email</b></label>
+    <input type="email" id = "email" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" id = "pass1" placeholder="Enter Password" name="psw"   required>
+
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" id = "pass2" placeholder="Repeat Password" name="psw-repeat" required>
+
+
+      <input type="checkbox" checked="checked" name="remember" > Remember me <br>
+	
+	 
+	      <label for = "gndr"><b>Gender</b></label><br>
+		<input type="radio" name="gender" value="male" required > Male<br>
+		<input type="radio" name="gender" value="female"> Female<br>
+		<input type="radio" name="gender" value="other"> Other<br>
+        <label for = "age"><b>Age</b></label><br>
+	<!-- si 100 sunt plain text sa se vada limitele range-ului-->
+		0<input type="range" name="rangeInput" min="10" max="100" onchange="updateTextInput(this.value);">100
+		<!--default range value-->
+		<input type="text" id="textInput" value="55">
+    </label>
+	
+	
+	
+    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+    <div class="clearfix">
+	<!--cancel buton nu face nimic inca -->
+      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="submit" class="signupbtn">Sign Up</button>
+    </div>
+  </div>
+</form>
+
+  <script src="JsRegister.js"></script>
+  
+  </body>
+  </html>
+
+
